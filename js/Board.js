@@ -31,10 +31,13 @@ function Board(){
 				board[i][j] = new Square(i, j, true);
     			//alert(board[i][j].toString());
 			
-				var $cell = $("<td>").text(board[i][j].toString());
+				//var $square = $("<div>");
+				
+				var $cell = $("<td>").attr('id', 'square');
+				$cell.text(board[i][j].toString());
 				
 				//var $cell = $("<td>").append(canvasArray[tileCount]); // Each data cell will contain a separate <canvas> element
-				$cell.appendTo(trow); 
+				$cell.appendTo(trow);
 			}
 			
 			trow.appendTo($tbody);
