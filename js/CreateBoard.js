@@ -4,6 +4,12 @@ $(document).ready(function() {
 	
 	var pawn = new Pawn(3, 4, 5, true);
 	var board = new Board();
+	
+	// Event handler for clicking squares on board
+	$('body').on('click', '#board td', function(e) {
+
+		alert($(this).children().attr('id'));
+	});
 });
 
 // Set all images to draggable
