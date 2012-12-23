@@ -1,4 +1,4 @@
 td { width:70px; height:70px; }
-td.oddSquare { background-color:white; }
-td.evenSquare { background-color:rgb(192,192,192); }
+.oddSquare { background-color:white; }
+.evenSquare { background-color:rgb(192,192,192); }
 table{ border: 1px solid black; }

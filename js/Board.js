@@ -19,8 +19,10 @@ function Board(){
     
     $(function () {
 
-		var $tbl = $('<table border="1">').attr('id', 'board');
-		var $tbody = $('<tbody>').attr('id', 'tableBody');
+		var $tbl = $('<table border="1">').attr('id', 'board'),
+			$tbody = $('<tbody>').attr('id', 'tableBody'),
+			boardColourOdd = 0,
+			boardColourEven = 1;
 		
 		for (var i = 0; i < 8; i++) {
 
@@ -30,17 +32,38 @@ function Board(){
 			
 				board[i][j] = new Square(i, j, true);
     			//alert(board[i][j].toString());
-			
-				//var $square = $("<div>");
 				
-				var $cell = $("<td>").attr('id', 'square');
+				var $cell = $("<td>").attr('id', 'col' + j);
+				//$cell.attr('width', '60px');
+				
+				
+				if (boardColourEven % 2 == 0){
+					
+					if (boardColourOdd % 2 == 0)
+						$cell.addClass("oddSquare");
+					else
+						$cell.addClass("evenSquare");
+				}else{
+					
+					if (boardColourOdd % 2 == 0)
+						$cell.addClass("evenSquare");
+					else
+						$cell.addClass("oddSquare");
+				}
+				
+				//var $img = $("<img>").attr('src', 'images/pawnBlack.png');
+				
+				//$cell.append("<img src=\"\" id=\"pawnBlack0\" width=\"60px\">");
+				//$img.appendTo($cell);
 				$cell.text(board[i][j].toString());
-				
-				//var $cell = $("<td>").append(canvasArray[tileCount]); // Each data cell will contain a separate <canvas> element
+
 				$cell.appendTo(trow);
+				
+				boardColourOdd++;
 			}
 			
 			trow.appendTo($tbody);
+			boardColourEven++;
 		}
 
 		$tbl.append($tbody);
