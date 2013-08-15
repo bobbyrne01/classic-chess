@@ -2,95 +2,225 @@
 	<head>
 		<meta charset="UTF-8">
 		
+		<title>Classic Chess</title>
+		
 		<script type="text/javascript" src="lib/jquery-1.8.3.js"></script>
 		<script type="text/javascript" src="lib/jquery-ui-1.9.2.custom.js"></script> 
 		<script type="text/javascript" src="js/Init.js"></script>      
 		<script type="text/javascript" src="js/Pieces.js"></script> 
 		<script type="text/javascript" src="js/Board.js"></script>
 		
-		<link rel="stylesheet" type="text/css" href="css/BoardColors.css">  
+		<link rel="stylesheet" type="text/css" href="css/BoardColors.css">
 	</head>                                                
 	<body>  
 		<table id="board">
 			<tr>
-				<td class="oddSquare"><img src="images/rookBlack.png" id="rookBlack0" width="60px"/></td>
-				<td class="evenSquare"><img src="images/knightBlack.png" id="knightBlack0" width="60px"></td>
-				<td class="oddSquare"><img src="images/bishopBlack.png" id="bishopBlack0" width="60px"></td>
-				<td class="evenSquare"><img src="images/queenBlack.png" id="queenBlack" width="60px"></td>
-				<td class="oddSquare"><img src="images/kingBlack.png" id="kingBlack" width="60px"></td>
-				<td class="evenSquare"><img src="images/bishopBlack.png" id="bishopBlack1" width="60px"></td>
-				<td class="oddSquare"><img src="images/knightBlack.png" id="knightBlack1" width="60px"></td>
-				<td class="evenSquare"><img src="images/rookBlack.png" id="rookBlack1" width="60px"></td>
+				<td class="oddSquare" data-row="0" data-col="0">
+		            <div id="rookBlackDiv0" data-captured="false">
+		                <img src="images/rookBlack.png" id="rookBlackImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="0" data-col="1">
+		            <div id="knightBlackDiv0"  data-captured="false">
+		                <img src="images/knightBlack.png" id="knightBlackImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="0" data-col="2">
+		            <div id="bishopBlackDiv0" data-captured="false">
+		                <img src="images/bishopBlack.png" id="bishopBlackImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="0" data-col="3">
+		            <div id="queenBlackDiv" data-captured="false">
+		                <img src="images/queenBlack.png" id="queenBlackImg" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="0" data-col="4">
+		            <div id="kingBlackDiv" data-captured="false">
+		                <img src="images/kingBlack.png" id="kingBlackImg" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="0" data-col="5">
+		            <div id="bishopBlackDiv1" data-captured="false">
+		                <img src="images/bishopBlack.png" id="bishopBlackImg1" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="0" data-col="6">
+		            <div id="knightBlackDiv1" data-captured="false">
+		                <img src="images/knightBlack.png" id="knightBlackImg1" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="0" data-col="7">
+		            <div id="rookBlackDiv1" data-captured="false">
+		                <img src="images/rookBlack.png" id="rookBlackImg1" width="60px"></img>
+		            </div>
+		        </td>
 			</tr>
 			<tr>
-				<td class="evenSquare"><img src="images/pawnBlack.png" id="pawnBlack0" width="60px"></td>
-				<td class="oddSquare"><img src="images/pawnBlack.png" id="pawnBlack1" width="60px"></td>
-				<td class="evenSquare"><img src="images/pawnBlack.png" id="pawnBlack2" width="60px"></td>
-				<td class="oddSquare"><img src="images/pawnBlack.png" id="pawnBlack3" width="60px"></td>
-				<td class="evenSquare"><img src="images/pawnBlack.png" id="pawnBlack4" width="60px"></td>
-				<td class="oddSquare"><img src="images/pawnBlack.png" id="pawnBlack5" width="60px"></td>
-				<td class="evenSquare"><img src="images/pawnBlack.png" id="pawnBlack6" width="60px"></td>
-				<td class="oddSquare"><img src="images/pawnBlack.png" id="pawnBlack7" width="60px"></td>
+				<td class="evenSquare" data-row="1" data-col="0">
+		            <div id="pawnBlackDiv0" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="1" data-col="1">
+		            <div id="pawnBlackDiv1" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg1" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="1" data-col="2">
+		            <div id="pawnBlackDiv2" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg2" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="1" data-col="3">
+		            <div id="pawnBlackDiv3" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg3" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="1" data-col="4">
+		            <div id="pawnBlackDiv4" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg4" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="1" data-col="5">
+		            <div id="pawnBlackDiv5" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg5" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="1" data-col="6">
+		            <div id="pawnBlackDiv6" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg6" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="1" data-col="7">
+		            <div id="pawnBlackDiv7" data-captured="false">
+		                <img src="images/pawnBlack.png" id="pawnBlackImg7" width="60px"></img>
+		            </div>
+		        </td>
 			</tr>
 			<tr>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
+				<td class="oddSquare" data-row="2" data-col="0"></td>
+				<td class="evenSquare" data-row="2" data-col="1"></td>
+				<td class="oddSquare" data-row="2" data-col="2"></td>
+				<td class="evenSquare" data-row="2" data-col="3"></td>
+				<td class="oddSquare" data-row="2" data-col="4"></td>
+				<td class="evenSquare" data-row="2" data-col="5"></td>
+				<td class="oddSquare" data-row="2" data-col="6"></td>
+				<td class="evenSquare" data-row="2" data-col="7"></td>
 			</tr>
 			<tr>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
+				<td class="evenSquare" data-row="3" data-col="0"></td>
+				<td class="oddSquare" data-row="3" data-col="1"></td>
+				<td class="evenSquare" data-row="3" data-col="2"></td>
+				<td class="oddSquare" data-row="3" data-col="3"></td>
+				<td class="evenSquare" data-row="3" data-col="4"></td>
+				<td class="oddSquare" data-row="3" data-col="5"></td>
+				<td class="evenSquare" data-row="3" data-col="6"></td>
+				<td class="oddSquare" data-row="3" data-col="7"></td>
 			</tr>
 			<tr>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
+				<td class="oddSquare" data-row="4" data-col="0"></td>
+				<td class="evenSquare" data-row="4" data-col="1"></td>
+				<td class="oddSquare" data-row="4" data-col="2"></td>
+				<td class="evenSquare" data-row="4" data-col="3"></td>
+				<td class="oddSquare" data-row="4" data-col="4"></td>
+				<td class="evenSquare" data-row="4" data-col="5"></td>
+				<td class="oddSquare" data-row="4" data-col="6"></td>
+				<td class="evenSquare" data-row="4" data-col="7"></td>
 			</tr>
 			<tr>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
-				<td class="evenSquare"></td>
-				<td class="oddSquare"></td>
+				<td class="evenSquare" data-row="5" data-col="0"></td>
+				<td class="oddSquare" data-row="5" data-col="1"></td>
+				<td class="evenSquare" data-row="5" data-col="2"></td>
+				<td class="oddSquare" data-row="5" data-col="3"></td>
+				<td class="evenSquare" data-row="5" data-col="4"></td>
+				<td class="oddSquare" data-row="5" data-col="5"></td>
+				<td class="evenSquare" data-row="5" data-col="6"></td>
+				<td class="oddSquare" data-row="5" data-col="7"></td>
 			</tr>
 			<tr>
-				<td class="oddSquare"><img src="images/pawnWhite.png" id="pawnWhite0" width="60px"></td>
-				<td class="evenSquare"><img src="images/pawnWhite.png" id="pawnWhite1" width="60px"></td>
-				<td class="oddSquare"><img src="images/pawnWhite.png" id="pawnWhite2" width="60px"></td>
-				<td class="evenSquare"><img src="images/pawnWhite.png" id="pawnWhite3" width="60px"></td>
-				<td class="oddSquare"><img src="images/pawnWhite.png" id="pawnWhite4" width="60px"></td>
-				<td class="evenSquare"><img src="images/pawnWhite.png" id="pawnWhite5" width="60px"></td>
-				<td class="oddSquare"><img src="images/pawnWhite.png" id="pawnWhite6" width="60px"></td>
-				<td class="evenSquare"><img src="images/pawnWhite.png" id="pawnWhite7" width="60px"></td>
+				<td class="oddSquare" data-row="6" data-col="0">
+		            <div id="pawnWhiteDiv0" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="6" data-col="1">
+		            <div id="pawnWhiteDiv1" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg1" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="6" data-col="2">
+		            <div id="pawnWhiteDiv2" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg2" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="6" data-col="3">
+		            <div id="pawnWhiteDiv3" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg3" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="6" data-col="4">
+		            <div id="pawnWhiteDiv4" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg4" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="6" data-col="5">
+		            <div id="pawnWhiteDiv5" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg5" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="6" data-col="6">
+		            <div id="pawnWhiteDiv6" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg6" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="6" data-col="7">
+		            <div id="pawnWhiteDiv7" data-captured="false">
+		                <img src="images/pawnWhite.png" id="pawnWhiteImg7" width="60px"></img>
+		            </div>
+		        </td>
 			</tr>
 			<tr>
-				<td class="evenSquare"><img src="images/rookWhite.png" id="rookWhite0" width="60px"></td>
-				<td class="oddSquare"><img src="images/knightWhite.png" id="knightWhite0" width="60px"></td>
-				<td class="evenSquare"><img src="images/bishopWhite.png" id="bishopWhite0" width="60px"></td>
-				<td class="oddSquare"><img src="images/queenWhite.png" id="queenWhite" width="60px"></td>
-				<td class="evenSquare"><img src="images/kingWhite.png" id="kingWhite" width="60px"></td>
-				<td class="oddSquare"><img src="images/bishopWhite.png" id="bishopWhite1" width="60px"></td>
-				<td class="evenSquare"><img src="images/knightWhite.png" id="knightWhite1" width="60px"></td>
-				<td class="oddSquare"><img src="images/rookWhite.png" id="rookWhite1" width="60px"></td>
+				<td class="evenSquare" data-row="7" data-col="0">
+		            <div id="rookWhiteDiv0" data-captured="false">
+		                <img src="images/rookWhite.png" id="rookWhiteImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="7" data-col="1">
+		            <div id="knightWhiteDiv0" data-captured="false">
+		                <img src="images/knightWhite.png" id="knightWhiteImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="7" data-col="2">
+		            <div id="bishopWhiteDiv0" data-captured="false">
+		                <img src="images/bishopWhite.png" id="bishopWhiteImg0" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="7" data-col="3">
+		            <div id="queenWhiteDiv" data-captured="false">
+		                <img src="images/queenWhite.png" id="queenWhiteImg" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="7" data-col="4">
+		            <div id="kingWhiteDiv" data-captured="false">
+		                <img src="images/kingWhite.png" id="kingWhiteImg" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="7" data-col="5">
+		            <div id="bishopWhiteDiv1" data-captured="false">
+		                <img src="images/bishopWhite.png" id="bishopWhiteImg1" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="evenSquare" data-row="7" data-col="6">
+		            <div id="knightWhiteDiv1" data-captured="false">
+		                <img src="images/knightWhite.png" id="knightWhiteImg1" width="60px"></img>
+		            </div>
+		        </td>
+		        <td class="oddSquare" data-row="7" data-col="7">
+		            <div id="rookWhiteDiv1" data-captured="false">
+		                <img src="images/rookWhite.png" id="rookWhiteImg1" width="60px"></img>
+		            </div>
+		        </td>
 			</tr>
 		</table>     
 		<textarea rows="2" cols="100" id="debug"></textarea>            
